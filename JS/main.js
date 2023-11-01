@@ -83,6 +83,37 @@ const peliculas = [
     },
 ];
 
+function iniciarSesion(username, password) {
+    // Buscar el usuario en el objeto
+    const usuarioEncontrado = usuarios.find(user => user.username === username);
+
+    // Verificar si se encontró un usuario y si la contraseña coincide
+    if (usuarioEncontrado && usuarioEncontrado.password === password) {
+        return true; // Acceso correcto
+    } else {
+        return false; // Acceso denegado
+    }
+}
+
+const loginForm = document.getElementById("loginForm");
+const mensajeLogin = document.getElementById("mensajeLogin");
+
+loginForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar que el formulario se envíe
+
+    // Capturar el nombre de usuario y la contraseña ingresados
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Verificar usuario
+    if (iniciarSesion(username, password)) {
+        mensajeLogin.textContent = "Bienvenido a Contrapikado";
+        // Redirigir al usuario a la página principal
+    } else {
+        mensajeLogin.textContent = "Inténtalo de nuevo.";
+    }
+});
+
 function mostrarPeliculasEnPagina() {
     const peliculasContainer = document.getElementById("peliculasContainer");
 
