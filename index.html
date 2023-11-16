@@ -18,12 +18,16 @@
         <input type="password" id="password" required>
         <br>
         <button type="submit">Iniciar Sesión</button>
-    </form>
+    </form> 
+    
     <div id="mensajeLogin"></div>
 
-    <div id="peliculasContainer">
-        <!-- Aquí se mostrarán las películas -->
-    </div>
+    <nav>
+        <a href="#">Ficción</a>
+        <a href="#">Documental</a>
+        <a href="#">Cortometrajes</a>
+        <a href="#">Largometrajes</a>
+    </nav>
 
     <div class="watch-later">
         <h3>Ver más tarde</h3>
@@ -39,7 +43,17 @@
         </ul>
     </div>
 
+    <div id="peliculasContainer">
+        <!-- Aquí se mostrarán las películas -->
+    </div>
+
+    <footer class="footer">
+        <p>Contrapikado</p>
+    </footer>
+
     <script src="./JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./JS/sweetalert.js"></script>
 </body>
 
 </html>
